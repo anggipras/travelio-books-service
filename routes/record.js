@@ -19,6 +19,7 @@ recordRoutes.route("/fav/record").post(function (req, response) {
     if (result == null) {
       let myobj = req.body
       myobj.ammountFav = 1
+      console.log(result);
       
       db_connect.collection("favbooks").insertOne(myobj, function (err, res) {
         if (err) throw console.log(err);
@@ -31,6 +32,7 @@ recordRoutes.route("/fav/record").post(function (req, response) {
       let newvalues = {    
           $set: newresult
       }
+      console.log(newvalues);
 
       db_connect.collection("favbooks").updateOne(myquery, newvalues, function(err, newres) {
         if (err) throw console.log(err);
