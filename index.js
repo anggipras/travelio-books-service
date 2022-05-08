@@ -11,7 +11,7 @@ app.use(require("./routes/record"));
 const dbo = require("./db/connection");
 
 const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = "mongodb://localhost:27017";
+const uri = "mongodb+srv://anggipras:godisgood@bookscluster.xqks8.mongodb.net/booksapp?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 client.connect(err => {
   const collection = client.db("booksapp").collection("favbooks");
