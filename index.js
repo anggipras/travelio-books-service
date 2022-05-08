@@ -10,20 +10,20 @@ app.use(require("./routes/record"));
 // get driver connection
 const dbo = require("./db/connection");
 
-const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = "mongodb://localhost:27017";
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-client.connect(err => {
-  const collection = client.db("booksapp").collection("favbooks");
-  // perform actions on the collection object
+// const { MongoClient, ServerApiVersion } = require('mongodb');
+// const uri = "mongodb+srv://anggipras:godisgood@bookscluster.xqks8.mongodb.net/booksapp?retryWrites=true&w=majorit";
+// const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+// client.connect(err => {
+//   const collection = client.db("booksapp").collection("favbooks");
+//   // perform actions on the collection object
   
-  app.get("/fav/list", (request, response) => {
-    collection.find({}).toArray(function (err, result) {
-      if (err) throw err;
-      response.json(result);
-    });
-  })
-});
+//   app.get("/fav/list", (request, response) => {
+//     collection.find({}).toArray(function (err, result) {
+//       if (err) throw err;
+//       response.json(result);
+//     });
+//   })
+// });
 
 app.get("/", (req, resp) => {
   resp.send("Books Service is Working");

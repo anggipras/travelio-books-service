@@ -41,14 +41,14 @@ recordRoutes.route("/fav/record").post(function (req, response) {
 
 });
 
-// recordRoutes.route("/fav/list").get(function (request, response) {
-//   let db_connect = dbo.getDb();
-//   db_connect.collection("favbooks")
-//     .find({})
-//     .toArray(function (err, result) {
-//       if (err) throw err;
-//       response.json(result);
-//     });
-// });
+recordRoutes.route("/fav/list").get(function (request, response) {
+  let db_connect = dbo.getDb();
+  db_connect.collection("favbooks")
+    .find({})
+    .toArray(function (err, result) {
+      if (err) throw err;
+      response.json(result);
+    });
+});
 
 module.exports = recordRoutes;
