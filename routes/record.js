@@ -21,7 +21,7 @@ recordRoutes.route("/fav/record").post(function (req, response) {
       myobj.ammountFav = 1
       
       db_connect.collection("favbooks").insertOne(myobj, function (err, res) {
-        if (err) throw err;
+        if (err) throw console.log(err);
         response.json(res);
       });
     } else {
@@ -33,7 +33,7 @@ recordRoutes.route("/fav/record").post(function (req, response) {
       }
 
       db_connect.collection("favbooks").updateOne(myquery, newvalues, function(err, newres) {
-        if (err) throw err;
+        if (err) throw console.log(err);
         response.json(newres);
       });
     }
