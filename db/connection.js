@@ -1,5 +1,5 @@
 const { MongoClient } = require("mongodb");
-const Db = "mongodb+srv://anggipras:godisgood@bookscluster.xqks8.mongodb.net/booksapp?retryWrites=true&w=majority";
+const Db = "mongodb://localhost:27017";
 const client = new MongoClient(Db, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
